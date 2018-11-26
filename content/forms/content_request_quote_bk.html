@@ -1,0 +1,175 @@
+<%@page import="com.globalrelay.quote.QuoteType" %>
+<%@page import="com.globalrelay.dto.ArchiveAccessMethod" %>
+<%@page import="com.globalrelay.quote.QuoteAdditionalServiceType" %>
+<%@page import="com.globalrelay.quote.ContactPreference" %>
+
+<g:render template="/common/form/cancelButtonClick" />
+
+<g:render template="/common/form/js-bundle-forms" />
+
+<g:if test="${quote.type == QuoteType.FINRA}">
+<g:javascript src="finraMemberLookup.js" />
+</g:if>
+
+<g:javascript src="quote.js" />
+
+<g:formRemote class="gr-form" name="quoteRequestForm" method="post"
+url="${formUrl}"
+before="quoteRequestBeforeSubmit()"
+onSuccess="quoteRequestSuccess(data)"
+onFailure="quoteRequestFailure()"
+onLoading="quoteRequestLoading()"
+onComplete="quoteRequestComplete()"
+>
+
+    <g:render template="/common/form/globalErrors" />
+
+    <f:with bean="quote">
+    
+    <div class="main-content row">
+		<div class="col-md-12">
+			<h3>Contact Information</h3>
+		</div>
+	</div>
+
+    <fieldset>
+        <legend>TEST------Contact Information</legend>
+
+        <gr:tooltip id="contact-information">
+        <g:if test="${quote.type == QuoteType.FINRA}">
+        <p>
+            <strong>Firm CRD Number</strong><br />
+            Your firm's FINRA CRD number.
+            You will need to be an Active/Pending FINRA Firm to proceed.
+            If you're not sure what this is, check with FINRA's online
+            <a href="http://www.finra.org/Investors/ToolsCalculators/BrokerCheck/" target="_blank">
+                BrokerCheck tool
+            </a>
+        </p>
+        </g:if>
+
+        <p>
+            <strong>Number of Employees</strong><br />
+            Enter the number of employees whose messages you want to archive.
+        </p>
+        </gr:tooltip>
+
+        <g:if test="${quote.type == QuoteType.FINRA}">
+        <f:field property="crd" label="CRD Number"/>
+        </g:if>
+
+        <f:field property="name"/>
+
+        <f:field property="company" />
+
+        <f:field property="primaryDomain" />
+
+        <f:field property="domainNames" label="Secondary Domains" />
+
+        <f:field property="phone"/>
+
+        <f:field property="email" />
+
+        <f:field property="city" />
+
+        <f:field property="country" >
+            <div>
+                <g:countrySelect name="country" id="country" noSelection="['': message(code: 'noSelection.message')]" />
+            </div>
+        </f:field>
+
+        <f:field property="state" label="State / Province" required="true"/>
+
+        <f:field property="contactPreference" label="Contact me by" >
+            <div>
+                <gr:checkBoxList name="contactPreference" from="${ContactPreference.list()}" checkedValues="${bean.contactPreference}" />
+            </div>
+        </f:field>
+
+        <f:field property="numUsers" label="Number of Employees"/>
+
+    </fieldset>
+
+    <fieldset id="servicesFieldset">
+        <legend>Services</legend>
+
+        <gr:tooltip id="services">
+
+        <p>
+            <strong>Global Relay Hosted Email Service</strong><br />
+            Global Relay offers secure, hosted enterprise-class email services. A number
+            of hosted email packages are available to meet your firm's needs.<br />
+            <a href="/services/email-continuity-and-security#hosted" target="_blank">Read more</a>
+        </p>
+
+        <p>
+            <strong>Email Filtering Service</strong><br />
+            Global Relay virus &amp; spam filtering service.
+        </p>
+
+        <p>
+            <strong>Internal Private Instant Messaging Service</strong><br />
+            Global Relay Messenger is a secure messaging service your firm can use for
+            internal communication. Messages sent via Global Relay Messenger can be
+            archived by Global Relay Archive.
+        </p>
+
+        <p>
+            <strong>Email Continuity Service</strong><br />
+            Global Relay Email Continuity is an 'always on' secondary mail system for
+            full email continuity in the event your primary mail server suffers an
+            outage or disruption.
+        </p>
+
+        </gr:tooltip>
+
+        <f:field property="archiveServices" id="archiveServices.messageTypes" label="none" required="false"/>
+
+        <f:field property="archiveServices.userSpecified" input-HTMLclass="initVal" input-title="If Other, please specify" required="true" />
+
+        <f:field property="archiveAccess" label="none">
+            <p class="desc">
+                <strong>Global Relay offers a number of convenient ways for employees to search &amp; retrieve their archived messages. Which ones would be of interest to your firm?</strong>
+            </p>
+            <div>
+                <gr:checkBoxList class="expandedCheckBoxList" name="archiveAccess" from="${ArchiveAccessMethod.list()}" checkedValues="${quote.archiveAccess}" />
+            </div>
+        </f:field>
+
+        <f:field property="additional" id="additional.services" label="none" required="false">
+            <p class="desc">
+                <strong>Which additional services are you interested in?</strong>
+            </p>
+            <div>
+                <gr:checkBoxList class="expandedCheckBoxList" name="additional.services" from="${QuoteAdditionalServiceType.list()}" checkedValues="${quote.additional.services}" />
+            </div>
+        </f:field>
+
+        <f:field property="additional.userSpecified" input-HTMLclass="initVal" input-title="If Other, please specify" required="true" />
+    </fieldset>
+
+    <fieldset>
+        <legend>Additional Information</legend>
+
+        <f:field property="currentProvider" input-HTMLclass="initVal" input-title="Who is your current provider of message archiving?" />
+
+        <f:field property="comments">
+            <div>
+                <g:textArea cols="30" rows="10" id="comments" name="comments"/>
+            </div>
+        </f:field>
+
+    </fieldset>
+
+    </f:with>
+
+
+    <fieldset class="controls">
+        <g:submitButton class="submitButton" name="quoteRequestSubmit"  value="Submit" />
+
+        <gr:spinner id="quoteRequestFormSpinner" />
+
+        <g:submitButton type="button" class="cancelButton" name="cancelButton" value="Cancel" />
+    </fieldset>
+
+</g:formRemote>

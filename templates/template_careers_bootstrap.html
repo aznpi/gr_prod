@@ -1,0 +1,105 @@
+<!doctype html>
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+	<!-- Render the common head tags to include CSS and JS files -->
+		<wcm:widget path="widgets/bootstrap-site/common-head"/>
+	</head>
+	<body>
+		<wcm:widget path="widgets/bootstrap-site/header"/>
+		<div id="main-container" class="container">
+			<div id="main-content-container" class="row non-home-container">
+                <div id="product-title" class="row">
+                    <h1>${node.htmlTitle}</h1>
+                </div> 
+              
+                <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_nav"/>
+
+                <wcm:content/>
+
+            </div>
+        </div>
+        <wcm:widget path="widgets/bootstrap-site/footer"/>
+        <wcm:widget path="widgets/google-analytics"/>
+        <g:if test='${node.aliasURI != "ma"}'> 
+            <wcm:widget path="widgets/pardot-tracking-code"/>
+        </g:if>
+	</body>
+    <g:if test='${node.aliasURI == "jobs"}'> 
+        <script>
+            //filter var
+
+                /**
+                    *@desc searches for count of jobs in a city onload and onchange of city select
+                    *@return job count and displays message of count == 0
+                    *@array list cityList = [select option value of city|li id of city container]
+
+                **/
+
+                var citySearchCount = function(){
+
+                    var cityList = []
+
+                    $("#inputLocation > option").each(function() {
+
+                       var cityVal = this.value;
+                       var cityId = $(this).attr('rel');
+                       cityList.push(cityVal+'|'+cityId);
+
+                    });
+
+                    for	(i = 0; i < cityList.length; i++) {
+
+                        var cityStringList = cityList[i].split('|'); 
+                        var cityCount_i = $(".job-loc:contains('"+cityStringList[0]+"')").size();
+
+                        if(cityCount_i == 0){
+
+                            $('#'+cityStringList[1]+' .no-search').show();
+
+                        }
+                    }
+
+
+                } 
+
+                var options = {
+                    valueNames: [ 'location','department']
+                };
+
+                var userList = new List('job-list-container', options);
+
+                var updateList = function(){
+
+                    var locationVal = $('#job-category-select select#inputLocation').val();
+                    var departmentVal = $('#job-category-select select#inputDepartment').val();
+
+                    $('h4.no-search').hide();
+
+                    userList.filter(function(item) {
+                        return (_(locationVal).contains(item.values().location) || !locationVal) 
+                               && (_(departmentVal).contains(item.values().department) || !departmentVal);
+                      });
+
+                    citySearchCount();
+                }
+
+                $(function(){
+                    updateList();
+                    $("#job-category-select select#inputLocation").change(updateList);
+                    $("#job-category-select select#inputDepartment").change(updateList);
+
+                      var all_department = [];
+                      var all_location = [];
+
+                      _(userList.items).each(function(item){
+                        all_department.push(item.values().department)
+                        all_location.push(item.values().location)  
+                      });
+
+                    });
+            </script>
+        <wcm:widget path="widgets/bootstrap-site/widget_back_to_top"/>
+    </g:if>
+</html>

@@ -1,0 +1,341 @@
+/*
+
+	Supersized - Fullscreen Slideshow jQuery Plugin
+	Version : 3.2.7
+	Site	: www.buildinternet.com/project/supersized
+	
+	Theme 	: Shutter 1.2
+	Author	: Sam Dunn
+	Company : One Mighty Roar (www.onemightyroar.com)
+	License : MIT License / GPL License
+	
+*/
+/* Controls Bar
+----------------------------*/
+/* line 17, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#controls-wrapper {
+  margin: 0 auto;
+  height: 42px;
+  width: 100%;
+  bottom: 0px;
+  left: 0;
+  z-index: 4;
+  background: url(../../../../images/external/slideshow/nav-bg.png) repeat-x;
+  position: relative;
+}
+
+/* line 28, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#controls {
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  text-align: left;
+  z-index: 5;
+}
+
+/* line 36, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#slidecounter {
+  float: left;
+  color: #999;
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-shadow: #000 0 -1px 0;
+  margin: 0px 10px 0 15px;
+  line-height: 42px;
+}
+
+/* line 45, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#slidecaption {
+  overflow: hidden;
+  float: left;
+  color: #FFF;
+  font: 400 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-shadow: #000 1px 1px 2px;
+  margin: 0 20px 0 0;
+  line-height: 42px;
+}
+
+/* line 55, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#navigation {
+  float: right;
+  margin: 0px 20px 0 0;
+}
+
+/* line 60, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#play-button {
+  float: left;
+  margin-top: 1px;
+  border-right: 1px solid #333;
+  background: url("../../../../images/external/slideshow/bg-hover.png") repeat-x 0 44px;
+}
+/* line 65, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#play-button:hover {
+  background-position: 0 1px;
+  cursor: pointer;
+}
+
+/* line 71, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+.arrow-box {
+  background-color: #000;
+  height: 35px;
+  opacity: .5;
+  position: absolute;
+  top: 35%;
+  width: 35px;
+  z-index: 1001;
+}
+
+/* line 83, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+.arrow-box-left {
+  left: 15px;
+}
+
+/* line 86, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+.arrow-box-right {
+  right: 15px;
+}
+
+/* line 90, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#prevslide, #nextslide {
+  background: url("../../../../images/internal/buttons/btn_banner_arrow_sprite.png") no-repeat;
+  height: 21px;
+  position: absolute;
+  top: 6px;
+  width: 11px;
+}
+
+/* line 98, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#prevslide {
+  background-position: 0 0;
+  left: 10px;
+}
+
+/* line 102, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#nextslide {
+  background-position: -14px 0;
+  right: 10px;
+}
+
+/* line 108, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#prevslide:hover, #nextslide:hover {
+  cursor: pointer;
+}
+
+/* line 112, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+ul#slide-list {
+  padding: 15px 0;
+  float: left;
+  position: absolute;
+  left: 50%;
+}
+/* line 117, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+ul#slide-list li {
+  list-style: none;
+  width: 12px;
+  height: 12px;
+  float: left;
+  margin: 0 5px 0 0;
+}
+/* line 123, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+ul#slide-list li.current-slide a {
+  background-position: 0 0px;
+}
+/* line 125, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+ul#slide-list li.current-slide a:hover {
+  background-position: 0 0px;
+}
+/* line 129, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+ul#slide-list li a {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: url("../../../../images/external/slideshow/nav-dot.png") no-repeat 0 -24px;
+}
+/* line 134, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+ul#slide-list li a:hover {
+  background-position: 0 -12px;
+  cursor: pointer;
+}
+
+/* line 142, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#tray-button {
+  float: right;
+  margin-top: 1px;
+  border-left: 1px solid #333;
+  background: url("../../../../images/external/slideshow/bg-hover.png") repeat-x 0 44px;
+}
+/* line 147, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#tray-button:hover {
+  background-position: 0 1px;
+  cursor: pointer;
+}
+
+/* Progress Bar
+----------------------------*/
+/* line 156, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#progress-back {
+  z-index: 5;
+  position: fixed;
+  bottom: 42px;
+  left: 0;
+  height: 8px;
+  width: 100%;
+  background: url("../../../../images/external/slideshow/progress-back.png") repeat-x;
+}
+
+/* line 166, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#progress-bar {
+  position: relative;
+  height: 8px;
+  width: 100%;
+  background: url("../../../../images/external/slideshow/progress-bar.png") repeat-x;
+}
+
+/* Thumbnail Navigation
+----------------------------*/
+/* line 176, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#nextthumb, #prevthumb {
+  z-index: 2;
+  display: none;
+  position: fixed;
+  bottom: 61px;
+  height: 75px;
+  width: 100px;
+  overflow: hidden;
+  background: #ddd;
+  border: 1px solid #fff;
+  -webkit-box-shadow: 0 0 5px #000;
+}
+
+/* line 189, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#nextthumb {
+  right: 12px;
+}
+
+/* line 193, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#prevthumb {
+  left: 12px;
+}
+
+/* line 197, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#nextthumb img, #prevthumb img {
+  width: 150px;
+  height: auto;
+}
+
+/* line 202, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#nextthumb:active, #prevthumb:active {
+  bottom: 59px;
+}
+
+/* line 206, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#nextthumb:hover, #prevthumb:hover {
+  cursor: pointer;
+}
+
+/* Thumbnail Tray
+----------------------------*/
+/* line 213, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#thumb-tray {
+  position: relative;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  background: url(../../../../images/external/slideshow/bg-black.png);
+  height: 108px;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  -moz-box-shadow: 0px 0px 4px #000;
+  -webkit-box-shadow: 0px 0px 4px #000;
+  box-shadow: 0px 0px 4px #000;
+}
+
+/* line 228, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#thumb-back, #thumb-forward {
+  position: absolute;
+  z-index: 5;
+  height: 110px;
+  width: 40px;
+}
+
+/* line 235, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#thumb-back {
+  left: 0;
+  background: url("../../../../images/external/slideshow/thumb-back.png") no-repeat center center;
+}
+
+/* line 240, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#thumb-forward {
+  right: 0;
+  background: url("../../../../images/external/slideshow/thumb-forward.png") no-repeat center center;
+}
+
+/* line 245, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#thumb-back:hover, #thumb-forward:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* line 250, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#thumb-back:hover {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* line 254, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+#thumb-forward:hover {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* line 258, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+ul#thumb-list {
+  display: inline-block;
+  list-style: none;
+  position: relative;
+  left: 0px;
+  padding: 0 0px;
+}
+/* line 264, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+ul#thumb-list li {
+  background: #111;
+  list-style: none;
+  display: inline;
+  width: 150px;
+  height: 108px;
+  overflow: hidden;
+  float: left;
+  margin: 0;
+}
+/* line 273, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+ul#thumb-list li img {
+  width: 200px;
+  height: auto;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+/* line 287, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+ul#thumb-list li.current-thumb img {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+}
+/* line 292, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+ul#thumb-list li:hover {
+  cursor: pointer;
+}
+/* line 293, ../../../../sass/external/slideshow/theme/supersized.shutter.scss */
+ul#thumb-list li:hover img {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  width: 250px;
+}

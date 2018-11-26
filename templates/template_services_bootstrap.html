@@ -1,0 +1,39 @@
+<!doctype html>
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+	<!-- Render the common head tags to include CSS and JS files -->
+		<wcm:widget path="widgets/bootstrap-site/common-head"/>
+	</head>
+	<body>
+		<wcm:widget path="widgets/bootstrap-site/header"/>
+		<div id="main-container" class="container">
+			
+			
+            <div id="main-content-container" <g:if test="${node.identifier == 'home'}">class="row"</g:if><g:else>class="row non-home-container"</g:else>>
+                <div class="row bread-crumb-container">
+                    <div class="col-md-12">
+                        <script>document.write(breadcrumbs);</script>
+                    </div>
+                </div>
+                <div id="product-title" class="row">
+                    <div>
+                        <div class="left">
+                            <h1>${node.htmlTitle}</h1>
+                            <h4>${node.menuTitle}</h4>
+                        </div>
+                        <wcm:widget path="widgets/bootstrap-site/services/widget_icons_products"/>
+                    </div>
+                </div>
+
+                <wcm:content/>
+            </div>        
+        </div>
+        <wcm:widget path="widgets/bootstrap-site/footer"/>
+        <wcm:widget path="widgets/google-analytics"/>
+        <g:if test='${node.aliasURI != "ma"}'> 
+            <wcm:widget path="widgets/pardot-tracking-code"/>
+        </g:if>
+	</body>
+</html>

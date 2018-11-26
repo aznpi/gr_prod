@@ -1,0 +1,85 @@
+<div role="tabpanel">				
+    <ul id="year-tab" class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="dropdown active left">					
+            <a data-target="#" href="#" role="tab" class="dropdown-toggle" data-toggle="dropdown" aria-controls="news-2017" aria-expanded="false"><span id="year">2017</span> <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="drop1" id="year-drop">
+                <li class="active"><a href="#news-2017" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="news-2017" aria-expanded="false">2017</a></li>
+                 <li><a href="#news-2016" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="news-2016" aria-expanded="false">2016</a></li>
+                <li><a href="#news-2015" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="news-2015" aria-expanded="false">2015</a></li>
+                <li><a href="#news-2014" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="news-2014" aria-expanded="false">2014</a></li>
+                <li><a href="#news-2013" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="news-2013" aria-expanded="false">2013</a></li>
+                <li><a href="#news-2012" tabindex="-1" role="tab" id="dropdown3-tab" data-toggle="tab" aria-controls="news-2012" aria-expanded="false">2012</a></li>	
+            </ul>				
+        </li>				    		    
+    </ul>					
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active in fade" id="news-2017" aria-labelledby="dropdown1-tab">
+            <ul class="list">
+                <wcm:eachChild var="c" counter="n" sort="publishFrom" order="desc" filter="${ { n ->  n.identifier?.startsWith('2017 News') } }">
+                    <li>
+                        <div class="date"><g:formatDate format="yyyy-MM-dd" date="${c.publishFrom}"/></div>
+                        <div class="title"><a href="/company-info/news-events/${c.aliasURI}" <g:if test="${c.aliasURI.contains('redirect')}">target='_blank'</g:if>>${c.title.encodeAsHTML()}</a> <g:if test="${c.aliasURI.contains('redirect')}"><i class="fa fa-share" data-content="Forwarding link" trigger="hover"></i></g:if></div>
+                        <div class="description">${c.description}</div>
+                    </li>
+                </wcm:eachChild>             
+            </ul>
+        </div>
+        <div role="tabpanel" class="tab-pane in fade" id="news-2016" aria-labelledby="dropdown1-tab">
+            <ul class="list">
+                <wcm:eachChild var="c" counter="n" sort="publishFrom" order="desc" filter="${ { n ->  n.identifier?.startsWith('2016 News') } }">
+                    <li>
+                        <div class="date"><g:formatDate format="yyyy-MM-dd" date="${c.publishFrom}"/></div>
+                        <div class="title"><a href="/company-info/news-events/${c.aliasURI}" <g:if test="${c.aliasURI.contains('redirect')}">target='_blank'</g:if>>${c.title.encodeAsHTML()}</a> <g:if test="${c.aliasURI.contains('redirect')}"><i class="fa fa-share" data-content="Forwarding link" trigger="hover"></i></g:if></div>
+                        <div class="description">${c.description}</div>
+                    </li>
+                </wcm:eachChild>             
+            </ul>
+        </div>
+        <div role="tabpanel" class="tab-pane in fade" id="news-2015" aria-labelledby="dropdown1-tab">
+            <ul class="list">
+                <wcm:eachChild var="c" counter="n" sort="publishFrom" order="desc" filter="${ { n ->  n.identifier?.startsWith('2015 News') } }">
+                    <li>
+                        <div class="date"><g:formatDate format="yyyy-MM-dd" date="${c.publishFrom}"/></div>
+                        <div class="title"><a href="/company-info/news-events/${c.aliasURI}" <g:if test="${c.aliasURI.contains('redirect')}">target='_blank'</g:if>>${c.title.encodeAsHTML()}</a> <g:if test="${c.aliasURI.contains('redirect')}"><i class="fa fa-share" data-content="Forwarding link" trigger="hover"></i></g:if></div>
+                        <div class="description">${c.description}</div>
+                    </li>
+                </wcm:eachChild>             
+            </ul>
+        </div>            
+        <div role="tabpanel" class="tab-pane in fade" id="news-2014" aria-labelledby="dropdown1-tab">
+            <ul class="list">
+                <wcm:eachChild var="c" counter="n" sort="publishFrom" order="desc" filter="${ { n ->  n.identifier?.startsWith('2014 News') } }">
+                    <li>
+                        <div class="date"><g:formatDate format="yyyy-MM-dd" date="${c.publishFrom}"/></div>
+                        <div class="title"><a href="/company-info/news-events/${c.aliasURI}" <g:if test="${c.aliasURI.contains('redirect')}">target='_blank'</g:if>>${c.title.encodeAsHTML()}</a> <g:if test="${c.aliasURI.contains('redirect')}"><i class="fa fa-share" data-content="Forwarding link" trigger="hover"></i></g:if></div>
+                        <div class="description">${c.description}</div>
+                    </li>
+                </wcm:eachChild>             
+            </ul>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="news-2013" aria-labelledby="dropdown2-tab">
+            <ul class="list">
+                <wcm:eachChild var="c" counter="n" sort="publishFrom" order="desc" filter="${ { n ->  n.identifier?.startsWith('2013 News') } }">
+                    <li>
+                        <div class="date"><g:formatDate format="yyyy-MM-dd" date="${c.publishFrom}"/></div>
+                         <div class="title"><a href="/company-info/news-events/${c.aliasURI}" <g:if test="${c.aliasURI.contains('redirect')}">target='_blank'</g:if>>${c.title.encodeAsHTML()}</a> <g:if test="${c.aliasURI.contains('redirect')}"><i class="fa fa-share" data-content="Forwarding link" trigger="hover"></i></g:if></div>
+                        <div class="description">${c.description}</div>
+                    </li>
+                </wcm:eachChild> 
+                            
+            </ul>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="news-2012" aria-labelledby="dropdown3-tab">
+            <ul class="list">
+                <wcm:eachChild var="c" counter="n" sort="publishFrom" order="desc" filter="${ { n ->  n.identifier?.startsWith('2012 News') } }">
+                    <li>
+                        <div class="date"><g:formatDate format="yyyy-MM-dd" date="${c.publishFrom}"/></div>
+                        <div class="title"><a href="/company-info/news-events/${c.aliasURI}" <g:if test="${c.aliasURI.contains('redirect')}">target='_blank'</g:if>>${c.title.encodeAsHTML()}</a> <g:if test="${c.aliasURI.contains('redirect')}"><i class="fa fa-share" data-content="Forwarding link" trigger="hover"></i></g:if></div>
+                        <div class="description">${c.description}</div>
+                    </li>
+                </wcm:eachChild> 
+                            
+            </ul>
+        </div>
+    </div>
+</div>								

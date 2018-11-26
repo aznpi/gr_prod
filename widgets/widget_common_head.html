@@ -1,0 +1,128 @@
+<!-- Render the page title -->
+<!-- Render the page title -->
+<g:if test="${node != null}">
+  <title>
+      <g:if test="${node.class.name == 'org.weceem.html.WcmHTMLContent'}">
+       ${node.getHtmlTitle().encodeAsHTML()}
+      </g:if>  
+      <g:else>
+       ${node.getTitle().encodeAsHTML()}
+      </g:else>  
+    </title>
+</g:if>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="Global Relay has Eleven years experience with Email Archiving Solutions, Email Compliance and Message Archiving Systems." />
+<g:if test="${node.class.name == 'org.weceem.html.WcmHTMLContent' && node.keywords?.size()}">
+    <meta name="keywords" content="${node.keywords?.encodeAsHTML()}" />
+</g:if>
+<g:else>
+    <meta name="keywords" content="email archiving, email archiving solutions, message archiving system, compliance archiving, email compliance" />  
+</g:else>  
+
+<!-- meta tags -->
+<meta name="viewport" content="width=device-width, initial-scale=0.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+<!-- global relay stylesheets -->
+<link href="/resources/bootstrap-site/stylesheets/production/main-min.css?052518" rel="stylesheet">
+<link type="image/vnd.microsoft.icon" href="/Image/favicon.ico" rel="shortcut icon">
+
+<!-- external stylesheets -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<g:if test="${node.identifier == 'aboutUs'}">
+    <link href="/resources/bootstrap-site/stylesheets/external/timeline/timeline.css" rel="stylesheet">
+</g:if>
+
+<g:if test="${node.identifier =='grand-prix'}">
+  <link href="/resources/bootstrap-site/stylesheets/external/slideshow/theme/supersized.shutter.css" rel="stylesheet">
+  <link href="/resources/bootstrap-site/stylesheets/external/slideshow/supersized.css" rel="stylesheet">
+</g:if>
+
+<!-- external javascripts -->
+<script src="/resources/bootstrap-site/js/external/jquery/jquery.js"></script>
+<script src="/resources/bootstrap-site/js/external/jquery/jquery.cookie.js"></script>
+<script src="/resources/bootstrap-site/js/external/jquery/jquery.validate.min.js"></script>
+<script src="/resources/bootstrap-site/js/external/jquery/additional-methods.min.js"></script>
+<script src="/resources/bootstrap-site/js/external/fancybox/jquery.fancybox.js"></script>
+<script src="/resources/bootstrap-site/js/external/bootstrap/bootstrap.js"></script>
+
+<script src="/resources/bootstrap-site/js/external/lists/list.js"></script>
+<script src="/resources/bootstrap-site/js/external/lists/lodash.min.js"></script>
+<script src="/resources/bootstrap-site/js/external/search/tipuesearch_set.js"></script>
+<script src="/resources/bootstrap-site/js/external/search/tipuesearch_content.min.js"></script>
+<script src="/resources/bootstrap-site/js/external/search/tipuesearch.min.js"></script>
+
+<g:if test="${node.identifier =='grand-prix'}">
+    <script src="/resources/bootstrap-site/js/external/jquery/jquery.easing.min.js"></script>
+  <script src="/resources/bootstrap-site/js/external/slideshow/supersized.3.2.7.js"></script>
+  <script src="/resources/bootstrap-site/js/external/slideshow/supersized.shutter.js"></script>
+  <script src="/resources/bootstrap-site/js/external/slideshow/slideshow.gp.config.js"></script>
+</g:if>
+
+<g:if test="${node.identifier == 'aboutUs'}">
+    <script src="/resources/bootstrap-site/js/external/timeline/timeline.js"></script>
+</g:if>
+
+<g:if test="${node.identifier == 'contactUs'}">
+    
+    <script async defer src="//maps.google.com/maps/api/js?key=AIzaSyCh75UCaGvcX7kysSZZdZdoht_eJ-WTqhc&callback=initMap"></script>
+    <script>
+        function initMap() {
+          
+            var locationArray = ['Vancouver|49.284095|-123.108570','New York|40.752014|-73.980448','Chicago|41.886909|-87.632052','London|51.512918|-0.094396','Singapore|1.286036|103.853955','Raleigh|35.732805|-78.850747','Halifax|44.647573|-63.576689','Kelowna|49.884892|-119.491374'];
+        var iconBase = '/resources/bootstrap-site/images/internal/icons/';
+        
+        for(var i = 0; i < locationArray.length; i++){
+          
+          var locationList = locationArray[i].split('|');   
+          var mapCanvas = document.getElementById('map-canvas-'+i);
+          var myLatlng = new google.maps.LatLng(locationList[1],locationList[2]);
+          
+          var mapOptions = {
+                center: myLatlng,
+                zoom: 17,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: false,
+          scaleControl: false,
+          scrollwheel:false,
+          streetViewControl: false,
+          zoomControl  : true,
+          draggable: false
+          }
+          
+          var map = new google.maps.Map(mapCanvas, mapOptions);
+          
+          var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                icon: iconBase + "icon_map_marker.png",
+                title: 'We are here!'
+                
+            });
+        }
+        }
+        google.maps.event.addDomListener(window, 'load', initMap);
+    </script>
+    
+</g:if>
+
+<!-- external javascripts -->
+
+
+<!-- interal javascripts -->
+<script src="/resources/bootstrap-site/js/internal/main_function.js?052518v2"></script>
+
+<!---click jacking prevent script--->
+<style id="antiClickjack">
+  body{display:none !important;}
+</style>
+
+<script type="text/javascript">
+   if (self === top) {
+       var antiClickjack = document.getElementById("antiClickjack");
+       antiClickjack.parentNode.removeChild(antiClickjack);
+   } else {
+       top.location = self.location;
+   }
+</script>

@@ -1,0 +1,11 @@
+<div id="horizontal-nav" class="row">
+    <div class="col-md-12">
+        <ul>
+            <li <g:if test="${node.htmlTitle == 'About Us'}">class="active"</g:if><g:else>rel="/company-info/about-us"</g:else>>About Us</li>
+            <li <g:if test="${node.htmlTitle == 'Leadership Team'}">class="active"</g:if><g:else>rel="/company-info/leadership-team"</g:else>>Leadership Team</li>
+            <li <g:if test="${node.htmlTitle == 'Awards'}">class="active"</g:if><g:else>rel="/company-info/awards"</g:else>>Awards</li> 
+            <li <g:if test="${node.htmlTitle == 'News &amp; Events'}">class="active"</g:if><g:else>rel="/company-info/news-events"</g:else>>News &amp; Events</li>
+            <li <g:if test="${node.htmlTitle == 'Community Involvement'}">class="active"</g:if><g:else>rel="/company-info/community-involvement"</g:else>>Community Involvement</li>
+        </ul>
+    </div>
+</div>

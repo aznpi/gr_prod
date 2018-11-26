@@ -1,0 +1,8 @@
+<g:if test="${node.description == 'search' || node.description == 'archive' || node.description == 'message' || node.description == 'analysis'}">
+    <div class="product-nav-container">
+        <div <g:if test="${node.description == 'message'}">class="product-message active"</g:if><g:else>class="product-message" rel="/gr-services/message"</g:else> data-toggle="tooltip" data-placement="left" title="Message"></div>
+        <div <g:if test="${node.description == 'archive'}">class="product-archive active"</g:if><g:else>class="product-archive" rel="/gr-services/archive"</g:else> data-toggle="tooltip" data-placement="top" title="Archive"></div>
+        <div <g:if test="${node.description == 'search'}">class="product-search active"</g:if><g:else>class="product-search" rel="/gr-services/search"</g:else> data-toggle="tooltip" data-placement="right" title="Search"></div>
+        <div <g:if test="${node.description == 'analysis'}">class="product-analysis active"</g:if><g:else>class="product-analysis" rel="/gr-services/analysis" data-toggle="tooltip" </g:else> data-placement="right" title="Analysis"></div>
+    </div>
+</g:if>

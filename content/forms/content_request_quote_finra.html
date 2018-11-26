@@ -1,0 +1,13 @@
+<%@page import="com.globalrelay.quote.QuoteType"%>
+  
+<div class="row">
+    <div class="col-md-12">
+        <h1>Request a Quote</h1>
+        <h2>FINRA FIRMS</h2>
+    </div>
+</div>
+
+<g:include controller="quote" action="form" params="[quoteType: QuoteType.FINRA]" />
+
+<hr>
+<wcm:widget path="widgets/bootstrap-site/products/widget_info_boxes"/>

@@ -1,0 +1,54 @@
+<!doctype html>
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+      <!-- Render the common head tags to include CSS and JS files -->
+      <wcm:widget path="widgets/bootstrap-site/common-head"/>
+    </head>
+    <body>
+        <wcm:widget path="widgets/bootstrap-site/header"/>
+        <div id="main-container" class="container">
+            <div id="main-content-container" class="row non-home-container">
+                <div id="product-title" class="row">
+                    <h1>News &amp; Events</h1>
+                </div> 
+               
+                    <wcm:widget path="widgets/bootstrap-site/company-info/widget_company_info_nav"/>
+               
+                <div class="main-content row">
+                    <div class="col-md-8 left-container">
+                        <div id="news-container">  
+                            <wcm:content/>
+                        </div>
+                    </div>         
+                      
+                </div>
+            </div>
+        </div>
+        <wcm:widget path="widgets/bootstrap-site/footer"/>
+        <wcm:widget path="widgets/google-analytics"/>
+        <g:if test='${node.aliasURI != "ma"}'> 
+            <wcm:widget path="widgets/pardot-tracking-code"/>
+        </g:if>
+        <script>
+            var div_left;
+            var div_right;
+            var $panel_left = $('#panel-left');
+            var $panel_right = $('#panel-right');
+            var $right_sub = $('#events-container');
+
+            $(window).scroll(function () {
+                div_right = $panel_right.position().top;
+                var scrollTop = $(document).scrollTop();
+                if (scrollTop > div_right){
+                    console.log(div_right);
+                    $right_sub.addClass("panel-fixed");
+                }else{
+                    $right_sub.removeClass("panel-fixed");
+                }
+            });
+        </script>
+         <wcm:widget path="widgets/bootstrap-site/widget_back_to_top"/>	
+  </body>
+</html>

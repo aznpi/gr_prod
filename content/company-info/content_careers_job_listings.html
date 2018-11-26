@@ -1,0 +1,213 @@
+<div id="job-category-select" class="row">				
+    <div class="col-md-4">
+        <select name="inputDepartment" id="inputDepartment" data-filter="department" class="form-control input-lg" placeholder="department">
+            <option value="">All Departments</option>
+            <option value="accounting-finance">Accounting and Finance</option>
+            <option value="administration">Administration</option>
+            <option value="business-development">Business Development</option>
+            <option value="data-services">Data Services</option>
+            <option value="human-resources">Human Resources</option>
+            <option value="information-security">Information Security</option>
+            <option value="marketing">Marketing</option>
+            <option value="operations">Operations</option>
+            <option value="provisioning">Provisioning</option>
+            <option value="project-management">Product and Project Management</option>
+            <option value="product-training">Product Training</option>
+            <option value="qa">QA</option>
+            <option value="software-development">Software Development</option>
+            <option value="technical-support">Technical Support</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <select name="inputLocations" id="inputLocation" data-filter="location" class="form-control input-lg" placeholder="locations">
+            <option value="">All Locations</option>
+            <option value="VANCOUVER, BC" rel="vancouver">Vancouver</option>
+            <option value="MISSISSAUGA, ON" rel="mississauga">Mississauga</option>
+            <option value="HALIFAX, NS" rel="halifax">Halifax</option>
+            <option value="NEW YORK, NY" rel="new-york">New York</option>
+            <option value="CHICAGO, IL" rel="chicago">Chicago</option>
+            <option value="LONDON, ENG" rel="london">London</option>
+            <option value="SINGAPORE" rel="singapore">Singapore</option>
+            <option value="RALEIGH, NC" rel="raleigh">Raleigh</option>
+        </select>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+<div id="job-list-container" class="row">				
+    <ul class="list col-md-12">
+        <g:set var="cityName" value="vancouver"/>
+        <g:set var="provAbbr" value="BC"/>
+        <li id="vancouver" class="city">
+            <h3>${cityName.capitalize()}</h3>
+            <div class="display-none location">${cityName.toUpperCase()}, ${provAbbr}</div>
+            <h4 class="no-search display-none">No jobs available</h4>
+        </li>
+        <!-- VAN: ACCOUNTING & FINANCE -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Accounting and Finance',deptId:'accounting-finance',cityName:'vancouver',provAbbr:'BC']"/>
+       
+        <!-- VAN: BUSINESS DEVELOPMENT -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Business Development',deptId:'business-development',cityName:'vancouver',provAbbr:'BC']"/>
+        
+        <!-- VAN: DATA SERVICES -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Data Services',deptId:'data-services',cityName:'vancouver',provAbbr:'BC']"/>
+        
+        <!-- VAN: HUMAN RESOURCES -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Human Resources',deptId:'human-resources',cityName:'vancouver',provAbbr:'BC']"/>
+        
+        <!-- VAN: INFORMATION SECURITY -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Information Security',deptId:'information-security',cityName:'vancouver',provAbbr:'BC']"/>
+        
+        <!-- VAN: MARKETING -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Marketing',deptId:'marketing',cityName:'vancouver',provAbbr:'BC']"/>
+        
+        <!-- VAN: OPERATIONS -->
+       <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Operations',deptId:'operations',cityName:'vancouver',provAbbr:'BC']"/>
+        
+        <!-- VAN: PROVISIONING -->
+       <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Provisioning',deptId:'provisioning',cityName:'vancouver',provAbbr:'BC']"/>
+        
+        <!-- VAN: PRODUCT AND PROJECT MANAGEMENT -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Product and Project Management',deptId:'project-management',cityName:'vancouver',provAbbr:'BC']"/>
+        
+         <!-- VAN: PRODUCT TRAINING -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Product Training',deptId:'product-training',cityName:'vancouver',provAbbr:'BC']"/>
+        
+        <!-- VAN: QA -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'QA',deptId:'qa',cityName:'vancouver',provAbbr:'BC']"/>
+        
+        <!-- VAN: SOFTWARE DEVELOPMENT -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Software Development',deptId:'software-development',cityName:'vancouver',provAbbr:'BC']"/>
+        
+        <!-- VAN: TECHNICAL SUPPORT -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Technical Support',deptId:'technical-support',cityName:'vancouver',provAbbr:'BC']"/>
+        
+        <!--- end VANCOUVER -->
+        
+         <!-- MISSISSAUGA -->
+        <g:set var="cityName" value="mississauga"/>
+        <g:set var="provAbbr" value="ON"/>
+        <li id="mississauga" class="city">
+            <h3>${cityName.capitalize()}</h3>
+            <div class="display-none location">${cityName.toUpperCase()}, ${provAbbr}</div>
+            <h4 class="no-search display-none">No jobs available</h4>
+        </li>
+        
+        <!-- MISSISSAUGA: OPERATIONS -->
+       <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Operations',deptId:'operations',cityName:'mississauga',provAbbr:'ON']"/>
+        
+        <!-- MISSISSAUGA: TECHNICAL SUPPORT -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Technical Support',deptId:'technical-support',cityName:'mississauga',provAbbr:'ON']"/>
+        <!-- end MISSISSAUGA-->
+        
+        <!-- HALIFAX -->
+        <g:set var="cityName" value="halifax"/>
+        <g:set var="provAbbr" value="NS"/>
+        <li id="halifax" class="city">
+            <h3>${cityName.capitalize()}</h3>
+            <div class="display-none location">${cityName.toUpperCase()}, ${provAbbr}</div>
+            <h4 class="no-search display-none">No jobs available</h4>
+        </li>
+       
+        <!-- HALIFAX: BUSINESS DEVELOPMENT -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Business Development',deptId:'business-development',cityName:'halifax',provAbbr:'NS']"/>
+        
+        <!-- HALIFAX: MARKETING -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Marketing',deptId:'marketing',cityName:'halifax',provAbbr:'NS']"/>
+        
+        <!-- NEW YORK -->
+        <g:set var="cityName" value="new york"/>
+        <g:set var="provAbbr" value="NY"/>
+        <li id="new-york" class="city">
+            <h3>New York</h3>
+            <div class="display-none location">${cityName.toUpperCase()}, ${provAbbr}</div>
+            <h4 class="no-search display-none">No jobs available</h4>
+        </li>
+       
+        <!-- NEW YORK: BUSINESS DEVELOPMENT -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Business Development',deptId:'business-development',cityName:'new-york',provAbbr:'NY']"/>
+
+        <!-- NEW YORK: MARKETING -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Marketing',deptId:'marketing',cityName:'new-york',provAbbr:'NY']"/>
+       
+        <!-- end NEW YORK -->
+        
+        <!-- CHICAGO -->
+        <g:set var="cityName" value="chicago"/>
+        <g:set var="provAbbr" value="IL"/>
+        <li id="chicago" class="city">
+            <h3>${cityName.capitalize()}</h3>
+            <div class="display-none location">${cityName.toUpperCase()}, ${provAbbr}</div>
+            <h4 class="no-search display-none">No jobs available</h4>
+        </li>
+
+        <!-- CHICAGO: BUSINESS DEVELOPMENT -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Business Development',deptId:'business-development',cityName:'chicago',provAbbr:'IL']"/>
+      
+        <!-- CHICAGO: MARKETING -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Marketing',deptId:'marketing',cityName:'chicago',provAbbr:'IL']"/>
+        
+        <!-- CHICAGO: TECHNICAL SUPPORT -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Technical Support',deptId:'technical-support',cityName:'chicago',provAbbr:'IL']"/>        
+        <!-- end CHICAGO -->
+        
+        <!-- RALEIGH -->
+        <g:set var="cityName" value="raleigh"/>
+        <g:set var="provAbbr" value="NC"/>
+        <li id="raleigh" class="city">
+             <h3>${cityName.capitalize()}</h3>
+            <div class="display-none location">${cityName.toUpperCase()}, ${provAbbr}</div>
+            <h4 class="no-search display-none">No jobs available</h4>
+        </li>
+        
+        <!-- RALEIGH: BUSINESS DEVELOPMENT -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Business Development',deptId:'business-development',cityName:'raleigh',provAbbr:'NC']"/>
+        
+        <!-- RALEIGH: MARKETING -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Marketing',deptId:'marketing',cityName:'raleigh',provAbbr:'NC']"/>
+        
+        <!-- end RALEIGH -->
+        
+        <!-- LONDON -->
+        <g:set var="cityName" value="london"/>
+        
+        <li id="london" class="city">
+            <h3>${cityName.capitalize()}</h3>
+            <div class="display-none location">${cityName.toUpperCase()}</div>
+            <h4 class="no-search display-none">No jobs available</h4>
+        </li>
+         <!-- LONDON: BUSINESS DEVELOPMENT -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Business Development',deptId:'business-development',cityName:'london',provAbbr:'']"/>
+        
+        <!-- LONDON: MARKETING -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Marketing',deptId:'marketing',cityName:'london',provAbbr:'ENG']"/>
+        <!-- end LONDON -->
+        
+        <!-- SINGAPORE -->
+        <g:set var="cityName" value="singapore"/>
+        <li id="singapore" class="city">
+            <h3>${cityName.capitalize()}</h3>
+            <div class="display-none location">${cityName.toUpperCase()}</div>
+            <h4 class="no-search display-none">No jobs available</h4>
+        </li>
+         <!-- SINGAPORE: BUSINESS DEVELOPMENT -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Business Development',deptId:'business-development',cityName:'singapore',provAbbr:'']"/>
+        
+        <!-- SINGAPORE: MARKETING -->
+        <wcm:widget path="widgets/bootstrap-site/company-info/widget_careers_job_desc" model="[deptName:'Marketing',deptId:'marketing',cityName:'singapore',provAbbr:'']"/>
+        <!-- end SINGAPORE -->
+        
+        
+    </ul>
+</div>
+<script>
+		
+    $(document).ready(function(){
+				
+        var deptName = GetQueryStringParams('dept');
+				
+        if(deptName){
+            $('[name=inputDepartment]').val(deptName);
+        }
+    });
+		
+</script>                        

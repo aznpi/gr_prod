@@ -1,0 +1,37 @@
+<g:set var="jobCount" value="${0}" />        
+    <wcm:eachChild  var="c" counter="n" type="org.weceem.html.WcmHTMLContent" filter="${ { n  ->  n.identifier?.startsWith(deptName) } }">
+        
+        <g:set var="jobCount" value="${jobCount + 1}" />
+        <g:set var="uriList" value="${c.aliasURI.split('-')}" />
+        
+        <g:if test="${uriList.last() == cityName}">
+            
+            <g:if test="${jobCount == 1}">
+                <li>
+                    <h4>${deptName}</h4>
+                    <div class="display-none location">${cityName.toUpperCase().replace('-',' ')}<g:if test="${provAbbr != ''}">,</g:if> ${provAbbr}</div>
+                    <div class="display-none department">${deptId}</div>
+                </li>
+            </g:if>    
+            <li>
+                <div>
+                    <div class="col-md-8">
+                        <h4 class="blue"><a href="/company-info/careers/jobs/${c.aliasURI}">${c.menuTitle}</a></h4>
+                        <div class="description">
+                            <p>${c.description}  <br/><a href="/company-info/careers/jobs/${c.aliasURI}">Read More <i class="fa fa-arrow-circle-o-right"></i></a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="location job-loc">${cityName.toUpperCase().replace('-',' ')}<g:if test="${provAbbr != ''}">,</g:if> ${provAbbr}</div>
+                        <div class="display-none department">${deptId}</div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="apply-btn apply-mail">
+                            <button class="btn-red" subject="${c.htmlTitle}">APPLY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </g:if>
+</wcm:eachChild>
+        

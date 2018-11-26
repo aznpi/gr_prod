@@ -1,0 +1,205 @@
+/* line 5, ../../../sass/external/timeline/timeline.scss */
+#timeline {
+  height: 400px;
+  overflow: hidden;
+  margin: 20px auto;
+  position: relative;
+}
+/* line 11, ../../../sass/external/timeline/timeline.scss */
+#timeline a {
+  color: #CCC;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+}
+/* line 21, ../../../sass/external/timeline/timeline.scss */
+#timeline a:hover,
+#timeline a.selected {
+  color: #9d9fa2;
+  text-decoration: none;
+  font-size: 20px;
+}
+/* line 26, ../../../sass/external/timeline/timeline.scss */
+#timeline a:focus {
+  color: #9d9fa2;
+  text-decoration: none;
+}
+/* line 31, ../../../sass/external/timeline/timeline.scss */
+#timeline .sociales {
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* line 36, ../../../sass/external/timeline/timeline.scss */
+#timeline .bg-hide-left, #timeline .bg-hide-right {
+  background: #EFEFF0;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  width: 300px;
+}
+/* line 46, ../../../sass/external/timeline/timeline.scss */
+#timeline .bg-hide-left {
+  left: 0;
+}
+/* line 52, ../../../sass/external/timeline/timeline.scss */
+#timeline .arrow-down {
+  border-style: solid;
+  border-width: 20px 25px 0 25px;
+  border-color: #efeff0 transparent transparent transparent;
+  top: 80px;
+  left: 47.9%;
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+/* line 65, ../../../sass/external/timeline/timeline.scss */
+#timeline .bg-hide-right {
+  right: 0;
+}
+/* line 71, ../../../sass/external/timeline/timeline.scss */
+#timeline #dates-container {
+  background: url("../../../images/external/timeline/dot.gif") left 65px repeat-x;
+  background-color: #EFEFF0;
+  padding-top: 20px;
+}
+/* line 79, ../../../sass/external/timeline/timeline.scss */
+#timeline #dates {
+  width: 400px;
+  height: 60px;
+  overflow: hidden;
+}
+/* line 84, ../../../sass/external/timeline/timeline.scss */
+#timeline #dates li {
+  list-style: none;
+  float: left;
+  width: 100px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  background: url("../../../images/external/timeline/biggerdot.png") center bottom no-repeat;
+}
+/* line 93, ../../../sass/external/timeline/timeline.scss */
+#timeline #dates a {
+  line-height: 38px;
+  padding-bottom: 10px;
+}
+/* line 97, ../../../sass/external/timeline/timeline.scss */
+#timeline #dates .selected {
+  font-size: 38px;
+}
+
+/* line 104, ../../../sass/external/timeline/timeline.scss */
+#issues {
+  width: 1100px;
+  height: 350px;
+  overflow: hidden;
+}
+
+/* line 109, ../../../sass/external/timeline/timeline.scss */
+#issues li {
+  width: 1100px;
+  height: 350px;
+  list-style: none;
+  float: left;
+}
+
+/* line 115, ../../../sass/external/timeline/timeline.scss */
+#issues li.selected img {
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+
+/* line 122, ../../../sass/external/timeline/timeline.scss */
+#issues li img {
+  float: left;
+  margin: 10px 30px 10px 50px;
+  background: transparent;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)";
+  /* IE 8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+  /* IE 6 & 7 */
+  zoom: 1;
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  -ms-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-transform: scale(0.7, 0.7);
+  -moz-transform: scale(0.7, 0.7);
+  -o-transform: scale(0.7, 0.7);
+  -ms-transform: scale(0.7, 0.7);
+  transform: scale(0.7, 0.7);
+}
+
+/* line 140, ../../../sass/external/timeline/timeline.scss */
+#issues li h1 {
+  color: #ffcc00;
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+/* line 145, ../../../sass/external/timeline/timeline.scss */
+#issues li p {
+  font-size: 14px;
+  margin-right: 70px;
+  font-weight: normal;
+  line-height: 22px;
+}
+
+/* line 153, ../../../sass/external/timeline/timeline.scss */
+#grad_left,
+#grad_right {
+  width: 100px;
+  height: 350px;
+  position: absolute;
+  top: 0;
+}
+
+/* line 159, ../../../sass/external/timeline/timeline.scss */
+#grad_left {
+  left: 0;
+}
+
+/* line 163, ../../../sass/external/timeline/timeline.scss */
+#grad_right {
+  right: 0;
+}
+
+/* line 169, ../../../sass/external/timeline/timeline.scss */
+#next,
+#prev {
+  position: absolute;
+  top: 0;
+  font-size: 70px;
+  top: 170px;
+  width: 22px;
+  height: 38px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+/* line 182, ../../../sass/external/timeline/timeline.scss */
+#next {
+  right: 0;
+  background-image: url("../../../images/external/timeline/next.png");
+}
+
+/* line 186, ../../../sass/external/timeline/timeline.scss */
+#prev {
+  left: 0;
+  background-image: url("../../../images/external/timeline/prev.png");
+}
+
+/* line 191, ../../../sass/external/timeline/timeline.scss */
+#next.disabled,
+#prev.disabled {
+  opacity: 0.2;
+}

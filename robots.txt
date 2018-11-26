@@ -1,0 +1,6 @@
+#modified August 23,2018
+User-agent: *
+
+Disallow: /files/*
+Disallow: /blog
+Disallow: /resources/downloads/Zimbra/*

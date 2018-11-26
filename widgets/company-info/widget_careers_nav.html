@@ -1,0 +1,10 @@
+<div id="horizontal-nav" class="row">
+    <div class="col-md-12">
+        <ul>
+            <li <g:if test="${node.htmlTitle == 'Careers'}">class="active"</g:if><g:else>rel="/company-info/careers"</g:else>>Careers Home</li>
+            <li <g:if test="${node.htmlTitle == 'Job Listings'}">class="active"</g:if><g:else>rel="https://careers-globalrelay.icims.com/jobs"</g:else>>Job Listings</li>
+            <li <g:if test="${node.htmlTitle == 'Teams'}">class="active"</g:if><g:else>rel="/company-info/careers/teams"</g:else>>Teams</li>
+            <li <g:if test="${node.htmlTitle == 'Life at GR'}">class="active"</g:if><g:else>rel="/company-info/careers/life"</g:else>>Life at GR</li>
+        </ul>
+    </div>
+</div>
